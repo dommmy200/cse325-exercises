@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "cMLoPGyBYcM=",
+  "success": true,
+  "projectFilePath": "/Users/Dommmy/Documents/cse325-exercises/HelloWorld/HelloWorld.csproj",
+  "expectedPackageFiles": [
+    "/Users/Dommmy/.nuget/packages/microsoft.netcore.app.ref/9.0.11/microsoft.netcore.app.ref.9.0.11.nupkg.sha512",
+    "/Users/Dommmy/.nuget/packages/microsoft.aspnetcore.app.ref/9.0.11/microsoft.aspnetcore.app.ref.9.0.11.nupkg.sha512",
+    "/Users/Dommmy/.nuget/packages/microsoft.netcore.app.host.osx-x64/9.0.11/microsoft.netcore.app.host.osx-x64.9.0.11.nupkg.sha512"
+  ],
+  "logs": []
+}
