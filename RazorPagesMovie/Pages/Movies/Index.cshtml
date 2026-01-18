@@ -2,20 +2,56 @@
 @model RazorPagesMovie.Pages.Movies.IndexModel
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "MyMovie";
 }
 
-<h1>Index</h1>
+<h1>Welcome to Dominic Movies</h1>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="Create" class="create-link">Create New</a>
 </p>
-<form>
+
+<form method="get">
     <p>
-        <label>Title: <input type="text" asp-for="SearchString" /></label>
+        <label>
+            Title:
+            <input type="text" asp-for="SearchString" />
+        </label>
+
+        <label>
+            Genre:
+            <select asp-for="MovieGenre" asp-items="Model.Genres">
+                <option value="">All</option>
+            </select>
+        </label>
+
+        <label>
+            Year:
+            <select asp-for="SearchYear" asp-items="Model.Years">
+                <option value="">All</option>
+            </select>
+        </label>
+    </p>
+
+    <p>
+        <label>
+            From Year:
+            <input type="number" asp-for="YearFrom" />
+        </label>
+
+        <label>
+            To Year:
+            <input type="number" asp-for="YearTo" />
+        </label>
+
         <input type="submit" value="Filter" />
     </p>
+
+    <span asp-validation-for="SearchYear" class="text-danger"></span>
+    <span asp-validation-for="YearFrom" class="text-danger"></span>
+    <span asp-validation-for="YearTo" class="text-danger"></span>
 </form>
+
 <table class="table">
     <thead>
         <tr>
