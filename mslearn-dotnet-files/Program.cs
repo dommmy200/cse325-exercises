@@ -93,8 +93,6 @@ double CalculateSalesTotal(IEnumerable<string> salesFiles)
 
 static string WriteSalesSummary(IEnumerable<string> salesFiles)
 {
-    // This is a dummy method to illustrate multiple methods in the same file.
-    // It does not perform any operations.
     var sb = new StringBuilder();
     sb.AppendLine("Sales Summary");
     sb.AppendLine("-----------------------------");
