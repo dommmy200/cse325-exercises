@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "Z1kEcZd7WaE=",
+  "success": true,
+  "projectFilePath": "/Users/Dommmy/Documents/cse325-exercises/cse325BlazorApp1/cse325BlazorApp1.csproj",
+  "expectedPackageFiles": [
+    "/Users/Dommmy/.nuget/packages/microsoft.aspnetcore.app.internal.assets/10.0.1/microsoft.aspnetcore.app.internal.assets.10.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}
