@@ -5,19 +5,7 @@
 @inject OrderState OrderState
 @using BlazingPizza.Services
 
-<div class="top-bar">
-    <a class="logo" href="">
-        <img src="img/logo.svg" />
-    </a>
-
-    <a href="" class="nav-tab">
-        <img src="img/pizza-slice.svg" />
-        <div>Get Pizza</div>
-    </a>
-</div>
-
 <div class="main">
-    <h1>Blazing Pizzas</h1>
     <ul class="pizza-cards">
         @if (specials != null)
         {
@@ -26,13 +14,6 @@
                 <li @onclick="@(() => OrderState.ShowConfigurePizzaDialog(special))"
                     style="background-image: url('@special.ImageUrl')">
                 </li>
-                @* <li style="background-image: url('@special.ImageUrl')">
-                    <div class="pizza-info">
-                        <span class="title">@special.Name</span>
-                        @special.Description
-                        <span class="price">@special.GetFormattedBasePrice()</span>
-                    </div>
-                </li> *@
             }
         }
     </ul>
@@ -80,70 +61,9 @@
 @code
 {
     List<PizzaSpecial> specials = new();
-    @* Pizza configuringPizza; *@
-    @* bool showingConfigureDialog; *@
     Order order => OrderState.Order;
     protected override async Task OnInitializedAsync()
     {
         specials = await HttpClient.GetFromJsonAsync<List<PizzaSpecial>>(NavigationManager.BaseUri + "specials");
     }
-    @* void ShowConfigurePizzaDialog(PizzaSpecial special)
-    {
-        configuringPizza = new Pizza()
-        {
-            Special = special,
-            SpecialId = special.Id,
-            Size = Pizza.DefaultSize
-        };
-
-        showingConfigureDialog = true;
-    } *@
 }
-@* protected override void OnInitialized()
-    {
-        specials.AddRange(new List<PizzaSpecial>
-{
-new PizzaSpecial
-{
-Name = "The Baconatorizor",
-BasePrice = 11.99M,
-Description = "It has EVERY kind of bacon",
-ImageUrl="img/pizzas/bacon.jpg"
-},
-new PizzaSpecial
-{
-Name = "Buffalo chicken",
-BasePrice = 12.75M,
-Description = "Spicy chicken, hot sauce, and blue cheese, guaranteed to warm you up",
-ImageUrl="img/pizzas/meaty.jpg"
-},
-new PizzaSpecial
-{
-Name = "Veggie Delight",
-BasePrice = 11.5M,
-Description = "It's like salad, but on a pizza",
-ImageUrl="img/pizzas/salad.jpg"
-},
-new PizzaSpecial
-{
-Name = "Margherita",
-BasePrice = 9.99M,
-Description = "Traditional Italian pizza with tomatoes and basil",
-ImageUrl="img/pizzas/margherita.jpg"
-},
-new PizzaSpecial
-{
-Name = "Basic Cheese Pizza",
-BasePrice = 11.99M,
-Description = "It's cheesy and delicious. Why wouldn't you want one?",
-ImageUrl="img/pizzas/cheese.jpg"
-},
-new PizzaSpecial
-{
-Name = "Classic pepperoni",
-BasePrice = 10.5M,
-Description = "It's the pizza you grew up with, but Blazing hot!",
-ImageUrl="img/pizzas/pepperoni.jpg"
-}
-});
-    } *@

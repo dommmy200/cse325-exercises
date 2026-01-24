@@ -37,7 +37,7 @@ namespace BlazingPizza.Model
 
         public string GetFormattedTotalPrice()
         {
-            return GetTotalPrice().ToString("0.00");
+            return GetTotalPrice().ToString("C");
         }
     }
 }

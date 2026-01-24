@@ -18,6 +18,6 @@
 
         public bool Vegan { get; set; }
 
-        public string GetFormattedBasePrice() => BasePrice.ToString("0.00");
+        public string GetFormattedBasePrice() => BasePrice.ToString("C");
     }
 }
